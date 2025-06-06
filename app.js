@@ -1,548 +1,320 @@
-// Дані для ігор
+// Дані гри
 const gameData = {
-  flags: {
-    beginner: [
-      {"name": "США", "flag": "🇺🇸"}, {"name": "Велика Британія", "flag": "🇬🇧"}, {"name": "Франція", "flag": "🇫🇷"}, {"name": "Німеччина", "flag": "🇩🇪"}, {"name": "Японія", "flag": "🇯🇵"}, {"name": "Китай", "flag": "🇨🇳"}, {"name": "Росія", "flag": "🇷🇺"}, {"name": "Канада", "flag": "🇨🇦"}, {"name": "Австралія", "flag": "🇦🇺"}, {"name": "Бразилія", "flag": "🇧🇷"}, {"name": "Індія", "flag": "🇮🇳"}, {"name": "Італія", "flag": "🇮🇹"}, {"name": "Іспанія", "flag": "🇪🇸"}, {"name": "Мексика", "flag": "🇲🇽"}, {"name": "Нідерланди", "flag": "🇳🇱"}, {"name": "Швеція", "flag": "🇸🇪"}, {"name": "Норвегія", "flag": "🇳🇴"}, {"name": "Швейцарія", "flag": "🇨🇭"}, {"name": "Польща", "flag": "🇵🇱"}, {"name": "Україна", "flag": "🇺🇦"}, {"name": "Туреччина", "flag": "🇹🇷"}, {"name": "Південна Корея", "flag": "🇰🇷"}, {"name": "Аргентина", "flag": "🇦🇷"}, {"name": "Єгипет", "flag": "🇪🇬"}, {"name": "Ізраїль", "flag": "🇮🇱"}, {"name": "Саудівська Аравія", "flag": "🇸🇦"}, {"name": "ПАР", "flag": "🇿🇦"}, {"name": "Нігерія", "flag": "🇳🇬"}, {"name": "Таїланд", "flag": "🇹🇭"}, {"name": "Греція", "flag": "🇬🇷"}
-    ],
-    intermediate: [
-      {"name": "Індонезія", "flag": "🇮🇩"}, {"name": "Пакистан", "flag": "🇵🇰"}, {"name": "Бангладеш", "flag": "🇧🇩"}, {"name": "В'єтнам", "flag": "🇻🇳"}, {"name": "Філіппіни", "flag": "🇵🇭"}, {"name": "Іран", "flag": "🇮🇷"}, {"name": "Ірак", "flag": "🇮🇶"}, {"name": "Афганістан", "flag": "🇦🇫"}, {"name": "Малайзія", "flag": "🇲🇾"}, {"name": "Узбекистан", "flag": "🇺🇿"}
-    ],
-    difficult_pairs: [
-      {"target": "🇹🇩", "options": ["🇹🇩", "🇷🇴", "🇲🇩", "🇦🇩"], "answer": "Чад"},
-      {"target": "🇲🇨", "options": ["🇲🇨", "🇮🇩", "🇵🇱", "🇲🇹"], "answer": "Монако"},
-      {"target": "🇳🇿", "options": ["🇳🇿", "🇦🇺", "🇫🇯", "🇨🇰"], "answer": "Нова Зеландія"}
-    ]
+  beginner: {
+    name: "Початковий",
+    countries: ["США", "Велика Британія", "Франція", "Німеччина", "Японія", "Канада", "Австралія", "Італія", "Іспанія", "Бразилія", "Китай", "Росія", "Індія", "Мексика", "Аргентина", "Південна Корея", "Нідерланди", "Швеція", "Норвегія", "Швейцарія", "Бельгія", "Австрія", "Польща", "Туреччина", "Греція", "Португалія", "Чехія", "Ірландія", "Данія", "Фінляндія", "Нова Зеландія", "ПАР", "Єгипет", "Ізраїль", "Саудівська Аравія", "Таїланд", "Сінгапур", "Україна"],
+    flags: ["🇺🇸", "🇬🇧", "🇫🇷", "🇩🇪", "🇯🇵", "🇨🇦", "🇦🇺", "🇮🇹", "🇪🇸", "🇧🇷", "🇨🇳", "🇷🇺", "🇮🇳", "🇲🇽", "🇦🇷", "🇰🇷", "🇳🇱", "🇸🇪", "🇳🇴", "🇨🇭", "🇧🇪", "🇦🇹", "🇵🇱", "🇹🇷", "🇬🇷", "🇵🇹", "🇨🇿", "🇮🇪", "🇩🇰", "🇫🇮", "🇳🇿", "🇿🇦", "🇪🇬", "🇮🇱", "🇸🇦", "🇹🇭", "🇸🇬", "🇺🇦"]
   },
-  math_problems: {
-    beginner: {"operations": ["+", "-"], "range": [0, 100], "small_operand": 10, "no_negative": true},
-    intermediate: {"operations": ["+", "-"], "range": [0, 1000], "small_operand": 100, "no_negative": true},
-    advanced: {"operations": ["+", "-"], "range": [-500, 1000], "small_operand": 100, "no_negative": false},
-    expert: {"operations": ["+", "-", "×", "÷"], "range": [0, 100], "small_operand": 50, "no_negative": false, "integers_only": true}
+  intermediate: {
+    name: "Середній",
+    countries: ["США", "Велика Британія", "Франція", "Німеччина", "Японія", "Канада", "Австралія", "Італія", "Іспанія", "Бразилія", "Китай", "Росія", "Індія", "Мексика", "Аргентина", "Південна Корея", "Нідерланди", "Швеція", "Норвегія", "Швейцарія", "Бельгія", "Австрія", "Польща", "Туреччина", "Греція", "Португалія", "Чехія", "Ірландія", "Данія", "Фінляндія", "Нова Зеландія", "ПАР", "Єгипет", "Ізраїль", "Саудівська Аравія", "Таїланд", "Сінгапур", "Україна", "Індонезія", "Пакистан", "Нігерія", "Бангладеш", "В'єтнам", "Філіппіни", "Ефіопія", "Іран", "Ірак", "Афганістан", "Узбекистан", "Малайзія", "Непал", "Шрі-Ланка", "М'янма", "Камбоджа", "Лаос", "Йорданія", "Ліван", "ОАЕ", "Кувейт", "Катар", "Бахрейн", "Оман", "Ємен", "Марокко", "Алжир", "Туніс", "Лівія", "Судан", "Кенія", "Танзанія", "Уганда", "Гана", "Сенегал", "Малі", "Буркіна-Фасо", "Нігер", "Чад", "Камерун", "ДР Конго", "Ангола", "Замбія", "Зімбабве", "Ботсвана", "Намібія", "Мозамбік", "Мадагаскар", "Маврикій", "Румунія", "Болгарія", "Сербія", "Хорватія", "Словенія", "Словаччина", "Угорщина", "Литва", "Латвія", "Естонія", "Білорусь", "Молдова", "Грузія", "Вірменія", "Азербайджан", "Казахстан", "Киргизстан", "Таджикистан", "Туркменістан"],
+    flags: ["🇺🇸", "🇬🇧", "🇫🇷", "🇩🇪", "🇯🇵", "🇨🇦", "🇦🇺", "🇮🇹", "🇪🇸", "🇧🇷", "🇨🇳", "🇷🇺", "🇮🇳", "🇲🇽", "🇦🇷", "🇰🇷", "🇳🇱", "🇸🇪", "🇳🇴", "🇨🇭", "🇧🇪", "🇦🇹", "🇵🇱", "🇹🇷", "🇬🇷", "🇵🇹", "🇨🇿", "🇮🇪", "🇩🇰", "🇫🇮", "🇳🇿", "🇿🇦", "🇪🇬", "🇮🇱", "🇸🇦", "🇹🇭", "🇸🇬", "🇺🇦", "🇮🇩", "🇵🇰", "🇳🇬", "🇧🇩", "🇻🇳", "🇵🇭", "🇪🇹", "🇮🇷", "🇮🇶", "🇦🇫", "🇺🇿", "🇲🇾", "🇳🇵", "🇱🇰", "🇲🇲", "🇰🇭", "🇱🇦", "🇯🇴", "🇱🇧", "🇦🇪", "🇰🇼", "🇶🇦", "🇧🇭", "🇴🇲", "🇾🇪", "🇲🇦", "🇩🇿", "🇹🇳", "🇱🇾", "🇸🇩", "🇰🇪", "🇹🇿", "🇺🇬", "🇬🇭", "🇸🇳", "🇲🇱", "🇧🇫", "🇳🇪", "🇹🇩", "🇨🇲", "🇨🇩", "🇦🇴", "🇿🇲", "🇿🇼", "🇧🇼", "🇳🇦", "🇲🇿", "🇲🇬", "🇲🇺", "🇷🇴", "🇧🇬", "🇷🇸", "🇭🇷", "🇸🇮", "🇸🇰", "🇭🇺", "🇱🇹", "🇱🇻", "🇪🇪", "🇧🇾", "🇲🇩", "🇬🇪", "🇦🇲", "🇦🇿", "🇰🇿", "🇰🇬", "🇹🇯", "🇹🇲"]
+  },
+  advanced: {
+    name: "Просунутий",
+    countries: ["Афганістан", "Албанія", "Алжир", "Андорра", "Ангола", "Антигуа і Барбуда", "Аргентина", "Вірменія", "Австралія", "Австрія", "Азербайджан", "Багамські острови", "Бахрейн", "Бангладеш", "Барбадос", "Білорусь", "Бельгія", "Беліз", "Бенін", "Бутан", "Болівія", "Боснія і Герцеговина", "Ботсвана", "Бразилія", "Бруней", "Болгарія", "Буркіна-Фасо", "Бурунді", "Кабо-Верде", "Камбоджа", "Камерун", "Канада", "ЦАР", "Чад", "Чілі", "Китай", "Колумбія", "Коморські острови", "ДР Конго", "Республіка Конго", "Коста-Ріка", "Хорватія", "Куба", "Кіпр", "Чехія", "Данія", "Джібуті", "Домініка", "Домініканська Республіка", "Еквадор", "Єгипет", "Ель Сальвадор", "Екваторіальна Гвінея", "Еритрея", "Естонія", "Есватіні", "Ефіопія", "Фіджі", "Фінляндія", "Франція", "Габон", "Гамбія", "Грузія", "Німеччина", "Гана", "Греція", "Гренада", "Гватемала", "Гвінея", "Гвінея-Бісау", "Гаяна", "Гаїті", "Гондурас", "Угорщина", "Ісландія", "Індія", "Індонезія", "Іран", "Ірак", "Ірландія", "Ізраїль", "Італія", "Кот-д'Івуар", "Ямайка", "Японія", "Йорданія", "Казахстан", "Кенія", "Кірибаті", "КНДР", "Південна Корея", "Кувейт", "Киргизстан", "Лаос", "Латвія", "Ліван", "Лесото", "Ліберія", "Лівія", "Ліхтенштейн", "Литва", "Люксембург", "Мадагаскар", "Малаві", "Малайзія", "Мальдіви", "Малі", "Мальта", "Маршаллові острови", "Мавританія", "Маврикій", "Мексика", "Мікронезія", "Молдова", "Монако", "Монголія", "Чорногорія", "Марокко", "Мозамбік", "М'янма", "Намібія", "Науру", "Непал", "Нідерланди", "Нова Зеландія", "Нікарагуа", "Нігер", "Нігерія", "Північна Македонія", "Норвегія", "Оман", "Пакистан", "Палау", "Панама", "Папуа-Нова Гвінея", "Парагвай", "Перу", "Філіппіни", "Польща", "Португалія", "Катар", "Румунія", "Росія", "Руанда", "Сент-Кітс і Невіс", "Сент-Люсія", "Сент-Вінсент і Гренадини", "Самоа", "Сан-Марино", "Сан-Томе і Принсіпі", "Саудівська Аравія", "Сенегал", "Сербія", "Сейшельські острови", "Сьєрра-Леоне", "Сінгапур", "Словаччина", "Словенія", "Соломонові острови", "Сомалі", "ПАР", "Південний Судан", "Іспанія", "Шрі-Ланка", "Судан", "Суринам", "Швеція", "Швейцарія", "Сирія", "Таджикистан", "Танзанія", "Таїланд", "Тімор-Лешті", "Того", "Тонга", "Тринідад і Тобаго", "Туніс", "Туреччина", "Туркменістан", "Тувалу", "Уганда", "Україна", "ОАЕ", "Велика Британія", "США", "Уругвай", "Узбекистан", "Вануату", "Ватикан", "Венесуела", "В'єтнам", "Ємен", "Замбія", "Зімбабве"],
+    flags: ["🇦🇫", "🇦🇱", "🇩🇿", "🇦🇩", "🇦🇴", "🇦🇬", "🇦🇷", "🇦🇲", "🇦🇺", "🇦🇹", "🇦🇿", "🇧🇸", "🇧🇭", "🇧🇩", "🇧🇧", "🇧🇾", "🇧🇪", "🇧🇿", "🇧🇯", "🇧🇹", "🇧🇴", "🇧🇦", "🇧🇼", "🇧🇷", "🇧🇳", "🇧🇬", "🇧🇫", "🇧🇮", "🇨🇻", "🇰🇭", "🇨🇲", "🇨🇦", "🇨🇫", "🇹🇩", "🇨🇱", "🇨🇳", "🇨🇴", "🇰🇲", "🇨🇩", "🇨🇬", "🇨🇷", "🇭🇷", "🇨🇺", "🇨🇾", "🇨🇿", "🇩🇰", "🇩🇯", "🇩🇲", "🇩🇴", "🇪🇨", "🇪🇬", "🇸🇻", "🇬🇶", "🇪🇷", "🇪🇪", "🇸🇿", "🇪🇹", "🇫🇯", "🇫🇮", "🇫🇷", "🇬🇦", "🇬🇲", "🇬🇪", "🇩🇪", "🇬🇭", "🇬🇷", "🇬🇩", "🇬🇹", "🇬🇳", "🇬🇼", "🇬🇾", "🇭🇹", "🇭🇳", "🇭🇺", "🇮🇸", "🇮🇳", "🇮🇩", "🇮🇷", "🇮🇶", "🇮🇪", "🇮🇱", "🇮🇹", "🇨🇮", "🇯🇲", "🇯🇵", "🇯🇴", "🇰🇿", "🇰🇪", "🇰🇮", "🇰🇵", "🇰🇷", "🇰🇼", "🇰🇬", "🇱🇦", "🇱🇻", "🇱🇧", "🇱🇸", "🇱🇷", "🇱🇾", "🇱🇮", "🇱🇹", "🇱🇺", "🇲🇬", "🇲🇼", "🇲🇾", "🇲🇻", "🇲🇱", "🇲🇹", "🇲🇭", "🇲🇷", "🇲🇺", "🇲🇽", "🇫🇲", "🇲🇩", "🇲🇨", "🇲🇳", "🇲🇪", "🇲🇦", "🇲🇿", "🇲🇲", "🇳🇦", "🇳🇷", "🇳🇵", "🇳🇱", "🇳🇿", "🇳🇮", "🇳🇪", "🇳🇬", "🇲🇰", "🇳🇴", "🇴🇲", "🇵🇰", "🇵🇼", "🇵🇦", "🇵🇬", "🇵🇾", "🇵🇪", "🇵🇭", "🇵🇱", "🇵🇹", "🇶🇦", "🇷🇴", "🇷🇺", "🇷🇼", "🇰🇳", "🇱🇨", "🇻🇨", "🇼🇸", "🇸🇲", "🇸🇹", "🇸🇦", "🇸🇳", "🇷🇸", "🇸🇨", "🇸🇱", "🇸🇬", "🇸🇰", "🇸🇮", "🇸🇧", "🇸🇴", "🇿🇦", "🇸🇸", "🇪🇸", "🇱🇰", "🇸🇩", "🇸🇷", "🇸🇪", "🇨🇭", "🇸🇾", "🇹🇯", "🇹🇿", "🇹🇭", "🇹🇱", "🇹🇬", "🇹🇴", "🇹🇹", "🇹🇳", "🇹🇷", "🇹🇲", "🇹🇻", "🇺🇬", "🇺🇦", "🇦🇪", "🇬🇧", "🇺🇸", "🇺🇾", "🇺🇿", "🇻🇺", "🇻🇦", "🇻🇪", "🇻🇳", "🇾🇪", "🇿🇲", "🇿🇼"]
+  },
+  expert: {
+    name: "Найскладніший",
+    groups: [
+      {
+        countries: ["Чад", "Румунія", "Андорра", "Молдова"],
+        flags: ["🇹🇩", "🇷🇴", "🇦🇩", "🇲🇩"]
+      },
+      {
+        countries: ["Індонезія", "Монако", "Польща", "Сінгапур"],
+        flags: ["🇮🇩", "🇲🇨", "🇵🇱", "🇸🇬"]
+      },
+      {
+        countries: ["Австралія", "Нова Зеландія", "Фіджі", "Тувалу"],
+        flags: ["🇦🇺", "🇳🇿", "🇫🇯", "🇹🇻"]
+      },
+      {
+        countries: ["Люксембург", "Нідерланди", "Хорватія", "Парагвай"],
+        flags: ["🇱🇺", "🇳🇱", "🇭🇷", "🇵🇾"]
+      },
+      {
+        countries: ["Ірландія", "Кот-д'Івуар", "Індія", "Нігер"],
+        flags: ["🇮🇪", "🇨🇮", "🇮🇳", "🇳🇪"]
+      },
+      {
+        countries: ["Сенегал", "Малі", "Гвінея", "Камерун"],
+        flags: ["🇸🇳", "🇲🇱", "🇬🇳", "🇨🇲"]
+      },
+      {
+        countries: ["Росія", "Словаччина", "Словенія", "Сербія"],
+        flags: ["🇷🇺", "🇸🇰", "🇸🇮", "🇷🇸"]
+      },
+      {
+        countries: ["Бангладеш", "Японія", "Палау", "Лаос"],
+        flags: ["🇧🇩", "🇯🇵", "🇵🇼", "🇱🇦"]
+      },
+      {
+        countries: ["Гондурас", "Ель Сальвадор", "Нікарагуа", "Гватемала"],
+        flags: ["🇭🇳", "🇸🇻", "🇳🇮", "🇬🇹"]
+      },
+      {
+        countries: ["Норвегія", "Ісландія", "Данія", "Фінляндія"],
+        flags: ["🇳🇴", "🇮🇸", "🇩🇰", "🇫🇮"]
+      }
+    ]
   }
 };
 
-// Додаткові набори прапорів для просунутого рівня
-const advancedFlags = [...gameData.flags.beginner, ...gameData.flags.intermediate];
-
 // Стан гри
-let gameState = {
-  currentScreen: 'main-menu',
-  flagsScore: 0,
-  mathScore: 0,
-  currentGameType: null,
-  currentDifficulty: null,
-  currentQuestion: null,
-  currentAnswer: null,
-  options: []
+let currentLevel = null;
+let currentQuestion = 0;
+let correctAnswers = 0;
+let totalQuestions = 10;
+let currentCorrectAnswer = null;
+let gameQuestions = [];
+let isAnswerSelected = false;
+
+// DOM елементи
+const screens = {
+  menu: document.getElementById('main-menu'),
+  game: document.getElementById('game-screen'),
+  results: document.getElementById('results-screen')
 };
 
-// DOM Елементи для навігації екранами
-let screens;
-let mainMenu;
-let flagsDifficulty;
-let mathDifficulty;
-let flagsGame;
-let mathGame;
-let answerFeedback;
+const elements = {
+  levelButtons: document.querySelectorAll('.level-btn'),
+  backToMenuBtn: document.getElementById('back-to-menu'),
+  backToMenuResultsBtn: document.getElementById('back-to-menu-results'),
+  playAgainBtn: document.getElementById('play-again'),
+  countryQuestion: document.getElementById('country-question'),
+  questionCounter: document.getElementById('question-counter'),
+  score: document.getElementById('score'),
+  flagButtons: document.querySelectorAll('.flag-btn'),
+  feedback: document.getElementById('feedback'),
+  finalScoreText: document.getElementById('final-score-text'),
+  scorePercentage: document.getElementById('score-percentage')
+};
 
-// Основна функція, яка запускається після завантаження DOM
-document.addEventListener('DOMContentLoaded', () => {
-  console.log('DOM повністю завантажено');
-  
-  // Ініціалізація елементів інтерфейсу
-  initializeElements();
-  
-  // Налаштування обробників подій
-  setupEventListeners();
-  
-  // Показуємо початковий екран
-  navigateToScreen('main-menu');
-  
-  console.log('Ініціалізацію завершено');
-});
+// Ініціалізація
+function init() {
+  // Додаємо обробники подій
+  elements.levelButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const level = e.currentTarget.getAttribute('data-level');
+      startGame(level);
+    });
+  });
 
-// Ініціалізація всіх елементів DOM
-function initializeElements() {
-  console.log('Ініціалізація елементів');
-  
-  screens = {
-    'main-menu': document.getElementById('main-menu'),
-    'flags-difficulty': document.getElementById('flags-difficulty'),
-    'math-difficulty': document.getElementById('math-difficulty'),
-    'flags-game': document.getElementById('flags-game'),
-    'math-game': document.getElementById('math-game')
-  };
-  
-  mainMenu = document.getElementById('main-menu');
-  flagsDifficulty = document.getElementById('flags-difficulty');
-  mathDifficulty = document.getElementById('math-difficulty');
-  flagsGame = document.getElementById('flags-game');
-  mathGame = document.getElementById('math-game');
-  answerFeedback = document.getElementById('answer-feedback');
-}
+  elements.backToMenuBtn.addEventListener('click', showMainMenu);
+  elements.backToMenuResultsBtn.addEventListener('click', showMainMenu);
+  elements.playAgainBtn.addEventListener('click', () => startGame(currentLevel));
 
-// Налаштування обробників подій для всіх кнопок
-function setupEventListeners() {
-  console.log('Налаштування обробників подій');
-  
-  // Головне меню - кнопки вибору гри
-  const flagsBtn = document.getElementById('flags-btn');
-  const mathBtn = document.getElementById('math-btn');
-  
-  addButtonClickListener(flagsBtn, () => {
-    console.log('Клік на кнопку "Прапори"');
-    navigateToScreen('flags-difficulty');
-  });
-  
-  addButtonClickListener(mathBtn, () => {
-    console.log('Клік на кнопку "Математика"');
-    navigateToScreen('math-difficulty');
-  });
-  
-  // Екран складності прапорів - кнопки назад та рівні складності
-  const backToMainFromFlags = document.getElementById('back-to-main-from-flags');
-  addButtonClickListener(backToMainFromFlags, () => {
-    console.log('Повернення до головного меню з вибору складності прапорів');
-    navigateToScreen('main-menu');
-  });
-  
-  const flagsBeginner = document.getElementById('flags-beginner');
-  const flagsIntermediate = document.getElementById('flags-intermediate');
-  const flagsAdvanced = document.getElementById('flags-advanced');
-  const flagsExpert = document.getElementById('flags-expert');
-  
-  addButtonClickListener(flagsBeginner, () => startFlagsGame('beginner'));
-  addButtonClickListener(flagsIntermediate, () => startFlagsGame('intermediate'));
-  addButtonClickListener(flagsAdvanced, () => startFlagsGame('advanced'));
-  addButtonClickListener(flagsExpert, () => startFlagsGame('expert'));
-  
-  // Екран складності математики - кнопки назад та рівні складності
-  const backToMainFromMath = document.getElementById('back-to-main-from-math');
-  addButtonClickListener(backToMainFromMath, () => {
-    console.log('Повернення до головного меню з вибору складності математики');
-    navigateToScreen('main-menu');
-  });
-  
-  const mathBeginner = document.getElementById('math-beginner');
-  const mathIntermediate = document.getElementById('math-intermediate');
-  const mathAdvanced = document.getElementById('math-advanced');
-  const mathExpert = document.getElementById('math-expert');
-  
-  addButtonClickListener(mathBeginner, () => startMathGame('beginner'));
-  addButtonClickListener(mathIntermediate, () => startMathGame('intermediate'));
-  addButtonClickListener(mathAdvanced, () => startMathGame('advanced'));
-  addButtonClickListener(mathExpert, () => startMathGame('expert'));
-  
-  // Ігровий екран прапорів - кнопки навігації
-  const backToFlagsDifficulty = document.getElementById('back-to-flags-difficulty');
-  const flagsToMain = document.getElementById('flags-to-main');
-  
-  addButtonClickListener(backToFlagsDifficulty, () => {
-    console.log('Повернення до вибору складності прапорів');
-    navigateToScreen('flags-difficulty');
-  });
-  
-  addButtonClickListener(flagsToMain, () => {
-    console.log('Повернення до головного меню з гри прапорів');
-    navigateToScreen('main-menu');
-  });
-  
-  // Ігровий екран математики - кнопки навігації
-  const backToMathDifficulty = document.getElementById('back-to-math-difficulty');
-  const mathToMain = document.getElementById('math-to-main');
-  
-  addButtonClickListener(backToMathDifficulty, () => {
-    console.log('Повернення до вибору складності математики');
-    navigateToScreen('math-difficulty');
-  });
-  
-  addButtonClickListener(mathToMain, () => {
-    console.log('Повернення до головного меню з гри математики');
-    navigateToScreen('main-menu');
+  elements.flagButtons.forEach((btn, index) => {
+    btn.addEventListener('click', () => {
+      if (!isAnswerSelected) {
+        selectAnswer(index);
+      }
+    });
   });
 }
 
-// Допоміжна функція для додавання обробника кліку з відслідковуванням
-function addButtonClickListener(button, callback) {
-  if (!button) {
-    console.error('Елемент кнопки не знайдено', button);
+// Функції переключення екранів
+function showScreen(screenName) {
+  Object.values(screens).forEach(screen => screen.classList.remove('active'));
+  screens[screenName].classList.add('active');
+}
+
+function showMainMenu() {
+  showScreen('menu');
+  resetGame();
+}
+
+function showGameScreen() {
+  showScreen('game');
+}
+
+function showResultsScreen() {
+  showScreen('results');
+  displayResults();
+}
+
+// Функції гри
+function startGame(level) {
+  currentLevel = level;
+  currentQuestion = 0;
+  correctAnswers = 0;
+  generateQuestions();
+  showGameScreen();
+  showNextQuestion();
+}
+
+function resetGame() {
+  currentLevel = null;
+  currentQuestion = 0;
+  correctAnswers = 0;
+  gameQuestions = [];
+  isAnswerSelected = false;
+  elements.feedback.classList.add('hidden');
+  
+  // Скидаємо стилі кнопок
+  elements.flagButtons.forEach(btn => {
+    btn.className = 'flag-btn';
+  });
+}
+
+function generateQuestions() {
+  gameQuestions = [];
+  const levelData = gameData[currentLevel];
+  
+  if (currentLevel === 'expert') {
+    // Для найскладнішого рівня генеруємо питання з груп схожих прапорів
+    for (let i = 0; i < totalQuestions; i++) {
+      const randomGroup = levelData.groups[Math.floor(Math.random() * levelData.groups.length)];
+      const correctIndex = Math.floor(Math.random() * randomGroup.countries.length);
+      
+      gameQuestions.push({
+        country: randomGroup.countries[correctIndex],
+        correctFlag: randomGroup.flags[correctIndex],
+        options: [...randomGroup.flags],
+        correctIndex: correctIndex
+      });
+    }
+  } else {
+    // Для інших рівнів генеруємо звичайні питання
+    for (let i = 0; i < totalQuestions; i++) {
+      const correctIndex = Math.floor(Math.random() * levelData.countries.length);
+      const correctCountry = levelData.countries[correctIndex];
+      const correctFlag = levelData.flags[correctIndex];
+      
+      // Генеруємо 3 неправильні варіанти
+      const wrongFlags = [];
+      while (wrongFlags.length < 3) {
+        const randomIndex = Math.floor(Math.random() * levelData.flags.length);
+        const flag = levelData.flags[randomIndex];
+        if (flag !== correctFlag && !wrongFlags.includes(flag)) {
+          wrongFlags.push(flag);
+        }
+      }
+      
+      // Створюємо массив варіантів і перемішуємо їх
+      const options = [correctFlag, ...wrongFlags];
+      const shuffledOptions = shuffleArray(options);
+      const newCorrectIndex = shuffledOptions.indexOf(correctFlag);
+      
+      gameQuestions.push({
+        country: correctCountry,
+        correctFlag: correctFlag,
+        options: shuffledOptions,
+        correctIndex: newCorrectIndex
+      });
+    }
+  }
+}
+
+function shuffleArray(array) {
+  const newArray = [...array];
+  for (let i = newArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+  }
+  return newArray;
+}
+
+function showNextQuestion() {
+  if (currentQuestion >= totalQuestions) {
+    showResultsScreen();
     return;
   }
   
-  button.addEventListener('click', (event) => {
-    console.log(`Клік на кнопку ${button.id || 'без id'}`);
-    
-    // Створюємо візуальний фідбек для кнопки
-    const rect = button.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    
-    // Додаємо клас для анімації
-    button.classList.add('btn-clicked');
-    
-    // Викликаємо функцію-колбек після короткої затримки (не більше 300ms)
-    setTimeout(() => {
-      button.classList.remove('btn-clicked');
-      callback();
-    }, 150);
-  });
-}
-
-// Функція для навігації між екранами
-function navigateToScreen(screenId) {
-  console.log(`Перехід до екрану: ${screenId}`);
+  isAnswerSelected = false;
+  const question = gameQuestions[currentQuestion];
+  currentCorrectAnswer = question.correctIndex;
   
-  // Ховаємо всі екрани
-  Object.values(screens).forEach(screen => {
-    screen.classList.remove('active');
+  // Оновлюємо UI
+  elements.countryQuestion.textContent = question.country;
+  elements.questionCounter.textContent = `Питання ${currentQuestion + 1} з ${totalQuestions}`;
+  elements.score.textContent = `Правильно: ${correctAnswers}`;
+  
+  // Оновлюємо прапори та скидаємо стилі
+  elements.flagButtons.forEach((btn, index) => {
+    const flagEmoji = btn.querySelector('.flag-emoji');
+    flagEmoji.textContent = question.options[index];
+    btn.className = 'flag-btn'; // Скидаємо всі класи
   });
   
-  // Показуємо потрібний екран
-  if (screens[screenId]) {
-    screens[screenId].classList.add('active');
-    gameState.currentScreen = screenId;
-    
-    // Анімація появи екрану за допомогою requestAnimationFrame
-    requestAnimationFrame(() => {
-      screens[screenId].style.animation = 'none';
-      screens[screenId].offsetHeight; // Форсуємо перемальовування
-      screens[screenId].style.animation = 'fadeIn 0.3s ease-in-out';
-    });
-  } else {
-    console.error(`Екран ${screenId} не знайдено`);
-  }
+  // Ховаємо фідбек
+  elements.feedback.classList.add('hidden');
 }
 
-// Функція для запуску гри з прапорами
-function startFlagsGame(difficulty) {
-  console.log(`Запуск гри з прапорами, рівень: ${difficulty}`);
+function selectAnswer(selectedIndex) {
+  if (isAnswerSelected) return;
   
-  gameState.currentGameType = 'flags';
-  gameState.currentDifficulty = difficulty;
-  gameState.flagsScore = 0;
+  isAnswerSelected = true;
   
-  // Оновлюємо відображення рахунку
-  document.getElementById('flags-score').textContent = '0';
+  // Відключаємо всі кнопки
+  elements.flagButtons.forEach(btn => btn.classList.add('disabled'));
   
-  // Переходимо до ігрового екрану
-  navigateToScreen('flags-game');
+  const isCorrect = selectedIndex === currentCorrectAnswer;
   
-  // Генеруємо перше запитання
-  generateFlagQuestion();
-}
-
-// Функція для запуску гри з математикою
-function startMathGame(difficulty) {
-  console.log(`Запуск гри з математикою, рівень: ${difficulty}`);
+  // Додаємо візуальний фідбек
+  elements.flagButtons[selectedIndex].classList.add(isCorrect ? 'correct' : 'incorrect');
   
-  gameState.currentGameType = 'math';
-  gameState.currentDifficulty = difficulty;
-  gameState.mathScore = 0;
-  
-  // Оновлюємо відображення рахунку
-  document.getElementById('math-score').textContent = '0';
-  
-  // Переходимо до ігрового екрану
-  navigateToScreen('math-game');
-  
-  // Генеруємо перше запитання
-  generateMathQuestion();
-}
-
-// Функція для генерації запитання з прапором
-function generateFlagQuestion() {
-  console.log('Генерація запитання з прапором');
-  
-  let flagsData;
-  let correctCountry;
-  
-  if (gameState.currentDifficulty === 'expert') {
-    // Для експертного рівня використовуємо схожі прапори
-    const randomIndex = Math.floor(Math.random() * gameData.flags.difficult_pairs.length);
-    const questionData = gameData.flags.difficult_pairs[randomIndex];
-    
-    gameState.currentQuestion = questionData.target;
-    gameState.currentAnswer = questionData.answer;
-    gameState.options = [];
-    
-    // Змішуємо варіанти відповідей
-    const shuffledOptions = [...questionData.options].sort(() => Math.random() - 0.5);
-    
-    // Відображаємо прапор
-    document.getElementById('flag-display').textContent = questionData.target;
-    
-    // Створюємо кнопки з варіантами відповідей
-    const optionsContainer = document.getElementById('flag-options');
-    optionsContainer.innerHTML = '';
-    
-    // Знаходимо правильну відповідь серед варіантів
-    const countryOptions = [
-      "Чад", "Румунія", "Молдова", "Андорра", 
-      "Монако", "Індонезія", "Польща", "Мальта",
-      "Нова Зеландія", "Австралія", "Фіджі", "Острови Кука"
-    ];
-    
-    shuffledOptions.forEach((flag, index) => {
-      let countryName;
-      if (flag === questionData.target) {
-        countryName = questionData.answer;
-      } else {
-        const optionIndex = questionData.options.indexOf(flag);
-        // Використовуємо заздалегідь заготовлені назви країн для схожих прапорів
-        countryName = countryOptions[optionIndex];
-      }
-      
-      const button = document.createElement('button');
-      button.className = 'btn option-btn';
-      button.textContent = countryName;
-      
-      addButtonClickListener(button, () => {
-        checkFlagAnswer(countryName);
-      });
-      
-      optionsContainer.appendChild(button);
-      gameState.options.push({flag, name: countryName});
-    });
-    
-  } else {
-    // Для інших рівнів використовуємо звичайні набори прапорів
-    if (gameState.currentDifficulty === 'beginner') {
-      flagsData = [...gameData.flags.beginner];
-    } else if (gameState.currentDifficulty === 'intermediate') {
-      flagsData = [...gameData.flags.intermediate];
-    } else if (gameState.currentDifficulty === 'advanced') {
-      flagsData = [...advancedFlags];
-    }
-    
-    // Вибираємо випадкову країну для запитання
-    const randomIndex = Math.floor(Math.random() * flagsData.length);
-    correctCountry = flagsData[randomIndex];
-    
-    gameState.currentQuestion = correctCountry.flag;
-    gameState.currentAnswer = correctCountry.name;
-    
-    // Відображаємо прапор
-    document.getElementById('flag-display').textContent = correctCountry.flag;
-    
-    // Створюємо варіанти відповідей (3 неправильних + 1 правильний)
-    const wrongOptions = flagsData
-      .filter(country => country.name !== correctCountry.name)
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 3);
-    
-    const allOptions = [...wrongOptions, correctCountry].sort(() => Math.random() - 0.5);
-    gameState.options = allOptions;
-    
-    // Створюємо кнопки з варіантами відповідей
-    const optionsContainer = document.getElementById('flag-options');
-    optionsContainer.innerHTML = '';
-    
-    allOptions.forEach(country => {
-      const button = document.createElement('button');
-      button.className = 'btn option-btn';
-      button.textContent = country.name;
-      
-      addButtonClickListener(button, () => {
-        checkFlagAnswer(country.name);
-      });
-      
-      optionsContainer.appendChild(button);
-    });
-  }
-}
-
-// Функція для генерації математичного запитання
-function generateMathQuestion() {
-  console.log('Генерація математичного запитання');
-  
-  const settings = gameData.math_problems[gameState.currentDifficulty];
-  
-  // Генеруємо операцію
-  const operation = settings.operations[Math.floor(Math.random() * settings.operations.length)];
-  
-  // Генеруємо операнди залежно від складності
-  let num1, num2, answer;
-  
-  do {
-    if (operation === '+' || operation === '-') {
-      // Для додавання та віднімання
-      num1 = Math.floor(Math.random() * (settings.range[1] - settings.range[0])) + settings.range[0];
-      num2 = Math.floor(Math.random() * settings.small_operand) + 1;
-      
-      if (operation === '+') {
-        answer = num1 + num2;
-      } else {
-        // Для віднімання міняємо місцями, якщо може вийти від'ємне число і це не дозволено
-        if (settings.no_negative && num1 < num2) {
-          [num1, num2] = [num2, num1];
-        }
-        answer = num1 - num2;
-      }
-    } else if (operation === '×') {
-      // Для множення
-      num1 = Math.floor(Math.random() * Math.min(20, settings.small_operand)) + 1;
-      num2 = Math.floor(Math.random() * (settings.range[1] / num1)) + 1;
-      answer = num1 * num2;
-    } else if (operation === '÷') {
-      // Для ділення (забезпечуємо цілочисельну відповідь)
-      num2 = Math.floor(Math.random() * 10) + 1;
-      answer = Math.floor(Math.random() * (settings.range[1] / num2)) + 1;
-      num1 = answer * num2;
-    }
-  } while (
-    // Перевіряємо обмеження
-    (settings.no_negative && answer < 0) || 
-    (answer > settings.range[1]) ||
-    (answer < settings.range[0])
-  );
-  
-  // Зберігаємо поточне запитання та відповідь
-  gameState.currentQuestion = `${num1} ${operation} ${num2}`;
-  gameState.currentAnswer = answer;
-  
-  // Відображаємо запитання
-  document.getElementById('math-question').textContent = `${num1} ${operation} ${num2} = ?`;
-  
-  // Створюємо варіанти відповідей (3 неправильних + 1 правильний)
-  const correctAnswer = answer;
-  let wrongAnswers = [];
-  
-  // Генеруємо неправильні відповіді близькі до правильної
-  for (let i = 0; i < 3; i++) {
-    let wrongAnswer;
-    do {
-      // Генеруємо число в межах ±20% від правильної відповіді, але не менше ±1
-      const deviation = Math.max(1, Math.abs(Math.floor(correctAnswer * 0.2)));
-      const randomOffset = Math.floor(Math.random() * (deviation * 2 + 1)) - deviation;
-      wrongAnswer = correctAnswer + randomOffset;
-      
-      // Забезпечуємо, що неправильна відповідь відрізняється від правильної та інших неправильних
-    } while (
-      wrongAnswer === correctAnswer || 
-      wrongAnswers.includes(wrongAnswer) ||
-      wrongAnswer < settings.range[0] ||
-      wrongAnswer > settings.range[1]
-    );
-    
-    wrongAnswers.push(wrongAnswer);
+  if (!isCorrect) {
+    // Показуємо правильну відповідь
+    elements.flagButtons[currentCorrectAnswer].classList.add('correct');
   }
   
-  // Об'єднуємо всі варіанти та перемішуємо
-  const allOptions = [...wrongAnswers, correctAnswer].sort(() => Math.random() - 0.5);
-  gameState.options = allOptions;
-  
-  // Створюємо кнопки з варіантами відповідей
-  const optionsContainer = document.getElementById('math-options');
-  optionsContainer.innerHTML = '';
-  
-  allOptions.forEach(option => {
-    const button = document.createElement('button');
-    button.className = 'btn option-btn';
-    button.textContent = option;
-    
-    addButtonClickListener(button, () => {
-      checkMathAnswer(option);
-    });
-    
-    optionsContainer.appendChild(button);
-  });
-}
-
-// Перевірка відповіді на запитання з прапором
-function checkFlagAnswer(selectedCountry) {
-  console.log(`Перевірка відповіді на запитання з прапором: ${selectedCountry}`);
-  
-  const isCorrect = selectedCountry === gameState.currentAnswer;
-  
-  // Відображаємо зворотній зв'язок
+  // Показуємо фідбек
   showFeedback(isCorrect);
   
-  // Виділяємо правильну та неправильну відповіді
-  const optionButtons = document.querySelectorAll('#flag-options .option-btn');
-  
-  optionButtons.forEach(button => {
-    if (button.textContent === gameState.currentAnswer) {
-      button.classList.add('correct');
-    } else if (button.textContent === selectedCountry && !isCorrect) {
-      button.classList.add('incorrect');
-    }
-    
-    // Вимикаємо кнопки на короткий час
-    button.disabled = true;
-  });
-  
-  // Якщо відповідь правильна, збільшуємо рахунок
   if (isCorrect) {
-    gameState.flagsScore++;
-    document.getElementById('flags-score').textContent = gameState.flagsScore;
+    correctAnswers++;
   }
   
-  // Генеруємо нове запитання через короткий час
+  // Переходимо до наступного питання через 2.5 секунди
   setTimeout(() => {
-    optionButtons.forEach(button => {
-      button.disabled = false;
-      button.classList.remove('correct', 'incorrect');
-    });
-    
-    generateFlagQuestion();
-  }, 1500);
+    currentQuestion++;
+    showNextQuestion();
+  }, 2500);
 }
 
-// Перевірка відповіді на математичне запитання
-function checkMathAnswer(selectedAnswer) {
-  console.log(`Перевірка відповіді на математичне запитання: ${selectedAnswer}`);
-  
-  const isCorrect = selectedAnswer === gameState.currentAnswer;
-  
-  // Відображаємо зворотній зв'язок
-  showFeedback(isCorrect);
-  
-  // Виділяємо правильну та неправильну відповіді
-  const optionButtons = document.querySelectorAll('#math-options .option-btn');
-  
-  optionButtons.forEach(button => {
-    const buttonValue = parseInt(button.textContent);
-    
-    if (buttonValue === gameState.currentAnswer) {
-      button.classList.add('correct');
-    } else if (buttonValue === selectedAnswer && !isCorrect) {
-      button.classList.add('incorrect');
-    }
-    
-    // Вимикаємо кнопки на короткий час
-    button.disabled = true;
-  });
-  
-  // Якщо відповідь правильна, збільшуємо рахунок
-  if (isCorrect) {
-    gameState.mathScore++;
-    document.getElementById('math-score').textContent = gameState.mathScore;
-  }
-  
-  // Генеруємо нове запитання через короткий час
-  setTimeout(() => {
-    optionButtons.forEach(button => {
-      button.disabled = false;
-      button.classList.remove('correct', 'incorrect');
-    });
-    
-    generateMathQuestion();
-  }, 1500);
-}
-
-// Функція для відображення зворотного зв'язку
 function showFeedback(isCorrect) {
-  console.log(`Відображення зворотного зв'язку: ${isCorrect ? 'правильно' : 'неправильно'}`);
+  const feedback = elements.feedback;
+  const feedbackIcon = feedback.querySelector('.feedback-icon');
+  const feedbackText = feedback.querySelector('.feedback-text');
   
-  // Встановлюємо клас та текст залежно від правильності відповіді
-  answerFeedback.className = isCorrect ? 'feedback correct' : 'feedback incorrect';
-  document.getElementById('feedback-text').textContent = isCorrect ? 'Правильно! 👍' : 'Неправильно! 👎';
+  if (isCorrect) {
+    feedbackIcon.textContent = '✅';
+    feedbackText.textContent = 'Правильно!';
+    feedback.classList.remove('error');
+  } else {
+    feedbackIcon.textContent = '❌';
+    feedbackText.textContent = 'Неправильно!';
+    feedback.classList.add('error');
+  }
   
-  // Показуємо зворотній зв'язок
-  answerFeedback.classList.remove('hidden');
-  
-  // Ховаємо зворотній зв'язок через короткий час
-  setTimeout(() => {
-    answerFeedback.classList.add('hidden');
-  }, 1000);
+  feedback.classList.remove('hidden');
 }
+
+function displayResults() {
+  const percentage = Math.round((correctAnswers / totalQuestions) * 100);
+  
+  elements.finalScoreText.textContent = 
+    `Ви правильно відповіли на ${correctAnswers} з ${totalQuestions} питань`;
+  elements.scorePercentage.textContent = `${percentage}%`;
+  
+  // Додаємо повідомлення залежно від результату
+  let encouragementMessage = '';
+  if (percentage >= 90) {
+    encouragementMessage = 'Відмінно! 🌟';
+  } else if (percentage >= 70) {
+    encouragementMessage = 'Добре! 👏';
+  } else if (percentage >= 50) {
+    encouragementMessage = 'Непогано! 👍';
+  } else {
+    encouragementMessage = 'Спробуйте ще раз! 💪';
+  }
+  
+  const resultsHeader = document.querySelector('.results-header h2');
+  resultsHeader.textContent = encouragementMessage;
+}
+
+// Запускаємо додаток
+document.addEventListener('DOMContentLoaded', init);
