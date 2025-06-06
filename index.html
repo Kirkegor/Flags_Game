@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вивчення Прапорів Світу</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Головне меню -->
+        <div id="main-menu" class="screen active">
+            <div class="header">
+                <h1>🌍 Вивчення Прапорів Світу</h1>
+                <p>Обери правильний прапор для країни!</p>
+            </div>
+            
+            <div class="level-buttons">
+                <button class="btn level-btn level-beginner" data-level="beginner">
+                    <div class="level-icon">🟢</div>
+                    <div class="level-info">
+                        <h3>Початковий</h3>
+                        <p>38 найвідоміших країн</p>
+                    </div>
+                </button>
+                
+                <button class="btn level-btn level-intermediate" data-level="intermediate">
+                    <div class="level-icon">🟡</div>
+                    <div class="level-info">
+                        <h3>Середній</h3>
+                        <p>104 великі та популярні країни</p>
+                    </div>
+                </button>
+                
+                <button class="btn level-btn level-advanced" data-level="advanced">
+                    <div class="level-icon">🟠</div>
+                    <div class="level-info">
+                        <h3>Просунутий</h3>
+                        <p>191 країна світу</p>
+                    </div>
+                </button>
+                
+                <button class="btn level-btn level-expert" data-level="expert">
+                    <div class="level-icon">🔴</div>
+                    <div class="level-info">
+                        <h3>Найскладніший</h3>
+                        <p>Схожі прапори</p>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- Екран гри -->
+        <div id="game-screen" class="screen">
+            <div class="game-header">
+                <button class="btn btn--outline back-btn" id="back-to-menu">← Назад до меню</button>
+                <div class="progress-info">
+                    <span id="question-counter">Питання 1 з 10</span>
+                    <span id="score">Правильно: 0</span>
+                </div>
+            </div>
+            
+            <div class="game-content">
+                <div class="country-name">
+                    <h2 id="country-question">Назва країни</h2>
+                </div>
+                
+                <div class="flags-grid">
+                    <button class="flag-btn" data-index="0">
+                        <span class="flag-emoji">🏳️</span>
+                    </button>
+                    <button class="flag-btn" data-index="1">
+                        <span class="flag-emoji">🏳️</span>
+                    </button>
+                    <button class="flag-btn" data-index="2">
+                        <span class="flag-emoji">🏳️</span>
+                    </button>
+                    <button class="flag-btn" data-index="3">
+                        <span class="flag-emoji">🏳️</span>
+                    </button>
+                </div>
+                
+                <div id="feedback" class="feedback hidden">
+                    <div class="feedback-content">
+                        <span class="feedback-icon">✅</span>
+                        <span class="feedback-text">Правильно!</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Екран результатів -->
+        <div id="results-screen" class="screen">
+            <div class="results-content">
+                <div class="results-header">
+                    <h2>🎉 Вітаємо!</h2>
+                    <div class="final-score">
+                        <span id="final-score-text">Ви правильно відповіли на 0 з 10 питань</span>
+                        <div class="score-percentage" id="score-percentage">0%</div>
+                    </div>
+                </div>
+                
+                <div class="results-actions">
+                    <button class="btn btn--primary" id="play-again">Грати ще раз</button>
+                    <button class="btn btn--outline" id="back-to-menu-results">Назад до меню</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
