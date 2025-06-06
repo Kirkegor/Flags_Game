@@ -3,107 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Вивчення Прапорів Світу</title>
+    <title>Навчальні Ігри - Прапори та Математика</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <!-- Головне меню -->
         <div id="main-menu" class="screen active">
-            <div class="header">
-                <h1>🌍 Вивчення Прапорів Світу</h1>
-                <p>Обери правильний прапор для країни!</p>
-            </div>
-            
-            <div class="level-buttons">
-                <button class="btn level-btn level-beginner" data-level="beginner">
-                    <div class="level-icon">🟢</div>
-                    <div class="level-info">
-                        <h3>Початковий</h3>
-                        <p>38 найвідоміших країн</p>
-                    </div>
+            <h1>Навчальні Ігри</h1>
+            <p>Оберіть гру для навчання</p>
+            <div class="game-buttons">
+                <button id="flags-btn" class="btn btn--primary game-btn">
+                    <span class="game-icon">🏳️</span>
+                    <span class="game-title">Прапори</span>
+                    <span class="game-desc">Вивчайте прапори країн світу</span>
                 </button>
-                
-                <button class="btn level-btn level-intermediate" data-level="intermediate">
-                    <div class="level-icon">🟡</div>
-                    <div class="level-info">
-                        <h3>Середній</h3>
-                        <p>104 великі та популярні країни</p>
-                    </div>
-                </button>
-                
-                <button class="btn level-btn level-advanced" data-level="advanced">
-                    <div class="level-icon">🟠</div>
-                    <div class="level-info">
-                        <h3>Просунутий</h3>
-                        <p>191 країна світу</p>
-                    </div>
-                </button>
-                
-                <button class="btn level-btn level-expert" data-level="expert">
-                    <div class="level-icon">🔴</div>
-                    <div class="level-info">
-                        <h3>Найскладніший</h3>
-                        <p>Схожі прапори</p>
-                    </div>
+                <button id="math-btn" class="btn btn--primary game-btn">
+                    <span class="game-icon">🔢</span>
+                    <span class="game-title">Математика</span>
+                    <span class="game-desc">Тренуйте математичні навички</span>
                 </button>
             </div>
         </div>
 
-        <!-- Екран гри -->
-        <div id="game-screen" class="screen">
+        <!-- Меню складності для прапорів -->
+        <div id="flags-difficulty" class="screen">
+            <div class="back-btn-container">
+                <button id="back-to-main-from-flags" class="btn btn--outline btn--sm">← Назад</button>
+            </div>
+            <h2>🏳️ Прапори - Оберіть рівень</h2>
+            <div class="difficulty-buttons">
+                <button id="flags-beginner" class="btn btn--secondary difficulty-btn">
+                    <span class="difficulty-title">Початковий</span>
+                    <span class="difficulty-desc">30 відомих країн</span>
+                </button>
+                <button id="flags-intermediate" class="btn btn--secondary difficulty-btn">
+                    <span class="difficulty-title">Середній</span>
+                    <span class="difficulty-desc">Більше країн світу</span>
+                </button>
+                <button id="flags-advanced" class="btn btn--secondary difficulty-btn">
+                    <span class="difficulty-title">Просунутий</span>
+                    <span class="difficulty-desc">Всі країни світу</span>
+                </button>
+                <button id="flags-expert" class="btn btn--secondary difficulty-btn">
+                    <span class="difficulty-title">Експерт</span>
+                    <span class="difficulty-desc">Схожі прапори</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Меню складності для математики -->
+        <div id="math-difficulty" class="screen">
+            <div class="back-btn-container">
+                <button id="back-to-main-from-math" class="btn btn--outline btn--sm">← Назад</button>
+            </div>
+            <h2>🔢 Математика - Оберіть рівень</h2>
+            <div class="difficulty-buttons">
+                <button id="math-beginner" class="btn btn--secondary difficulty-btn">
+                    <span class="difficulty-title">Початковий</span>
+                    <span class="difficulty-desc">+,- до 100</span>
+                </button>
+                <button id="math-intermediate" class="btn btn--secondary difficulty-btn">
+                    <span class="difficulty-title">Середній</span>
+                    <span class="difficulty-desc">+,- до 1000</span>
+                </button>
+                <button id="math-advanced" class="btn btn--secondary difficulty-btn">
+                    <span class="difficulty-title">Просунутий</span>
+                    <span class="difficulty-desc">З від'ємними числами</span>
+                </button>
+                <button id="math-expert" class="btn btn--secondary difficulty-btn">
+                    <span class="difficulty-title">Експерт</span>
+                    <span class="difficulty-desc">Всі операції</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Ігровий екран для прапорів -->
+        <div id="flags-game" class="screen">
             <div class="game-header">
-                <button class="btn btn--outline back-btn" id="back-to-menu">← Назад до меню</button>
-                <div class="progress-info">
-                    <span id="question-counter">Питання 1 з 10</span>
-                    <span id="score">Правильно: 0</span>
-                </div>
+                <button id="back-to-flags-difficulty" class="btn btn--outline btn--sm">← Назад</button>
+                <button id="flags-to-main" class="btn btn--outline btn--sm">🏠 Головне меню</button>
+                <div class="score">Правильно: <span id="flags-score">0</span></div>
             </div>
-            
             <div class="game-content">
-                <div class="country-name">
-                    <h2 id="country-question">Назва країни</h2>
+                <div class="question-container">
+                    <h3>Оберіть прапор країни:</h3>
+                    <div id="country-name" class="country-name-display"></div>
                 </div>
-                
-                <div class="flags-grid">
-                    <button class="flag-btn" data-index="0">
-                        <span class="flag-emoji">🏳️</span>
-                    </button>
-                    <button class="flag-btn" data-index="1">
-                        <span class="flag-emoji">🏳️</span>
-                    </button>
-                    <button class="flag-btn" data-index="2">
-                        <span class="flag-emoji">🏳️</span>
-                    </button>
-                    <button class="flag-btn" data-index="3">
-                        <span class="flag-emoji">🏳️</span>
-                    </button>
-                </div>
-                
-                <div id="feedback" class="feedback hidden">
-                    <div class="feedback-content">
-                        <span class="feedback-icon">✅</span>
-                        <span class="feedback-text">Правильно!</span>
-                    </div>
-                </div>
+                <div id="flag-options" class="flag-options-container"></div>
             </div>
         </div>
 
-        <!-- Екран результатів -->
-        <div id="results-screen" class="screen">
-            <div class="results-content">
-                <div class="results-header">
-                    <h2>🎉 Вітаємо!</h2>
-                    <div class="final-score">
-                        <span id="final-score-text">Ви правильно відповіли на 0 з 10 питань</span>
-                        <div class="score-percentage" id="score-percentage">0%</div>
-                    </div>
+        <!-- Ігровий екран для математики -->
+        <div id="math-game" class="screen">
+            <div class="game-header">
+                <button id="back-to-math-difficulty" class="btn btn--outline btn--sm">← Назад</button>
+                <button id="math-to-main" class="btn btn--outline btn--sm">🏠 Головне меню</button>
+                <div class="score">Правильно: <span id="math-score">0</span></div>
+            </div>
+            <div class="game-content">
+                <div class="question-container">
+                    <h3 id="math-question">2 + 3 = ?</h3>
                 </div>
-                
-                <div class="results-actions">
-                    <button class="btn btn--primary" id="play-again">Грати ще раз</button>
-                    <button class="btn btn--outline" id="back-to-menu-results">Назад до меню</button>
-                </div>
+                <div id="math-options" class="options-container"></div>
+            </div>
+        </div>
+
+        <!-- Результат відповіді -->
+        <div id="answer-feedback" class="feedback hidden">
+            <div class="feedback-content">
+                <span id="feedback-text"></span>
             </div>
         </div>
     </div>
